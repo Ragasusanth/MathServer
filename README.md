@@ -59,22 +59,23 @@ Publish the website in the given URL.
             <form method="POST">
                 {% csrf_token %}
                 <div>
-                    INTENSITY : <input type="text" name="intensity" value="{{ I }}"> (in A)<br/><br/>
+                    INTENSITY : <input type="text" name="intensity" value="{{ I }}"> (in A)<br />
                 </div>
                 <div>
-                    RESISTANCE : <input type="text" name="resistance" value="{{ R }}"> (in Ω)<br/><br/>
+                    RESISTANCE : <input type="text" name="resistance" value="{{ R }}"> (in Ω)<br />
                 </div>
                 <div>
-                    <input type="submit" value="Calculate"><br/><br/>
+                    <input type="submit" value="Calculate"><br />
                 </div>
                 <div>
-                    POWER : <input type="text" name="power" value="{{ power }}"> W<br/><br/>
+                    POWER : <input type="text" name="power" value="{{ power }}"> W<br />
                 </div>
             </form>
         </div>
     </center>
 </body>
 </html>
+
 ```
 ## urls
 ```
