@@ -76,7 +76,7 @@ Publish the website in the given URL.
 </body>
 </html>
 ```
-#urls
+## urls
 ```
 """
 URL configuration for EX05 project.
@@ -101,7 +101,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.powerlamp,name="powerlamp"),]
 ```
-#views
+## views
 ```
 from django.shortcuts import render
 
