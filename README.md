@@ -78,6 +78,55 @@ math.html
 </body>
 </html>
 ```
+#urls
+```
+"""
+URL configuration for EX05 project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from mathapp import views
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.powerlamp,name="powerlamp"),]
+```
+#views
+```
+from django.shortcuts import render
+
+def powerlamp(request):
+    context={}
+    context['Power'] = ""
+    context['I'] = ""
+    context['R'] = ""
+    if request.method == 'POST':
+        print("POST method is used")
+        I = request.POST.get('Intensity','')
+        R = request.POST.get('Resistence','')
+        print('request=',request)
+        print('Intensity=',I)
+        print('Resistence=',R)
+        Power = int(I) * int(I) * int(R)
+        context['Power'] = Power
+        context['I'] = I
+        context['R'] = R
+        print('Power=',Power)
+    return render(request,'mathapp/math.html',context)
+```
+
 ## SERVER SIDE PROCESSING:
 
 ![alt text](image-1.png)
